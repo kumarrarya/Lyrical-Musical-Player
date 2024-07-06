@@ -1,0 +1,24 @@
+.app-player{
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.75;
+    padding: 1rem;
+}
+
+.cover-img {
+    width: 35%;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 450px){
+    .app-player > img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .app-player > img {
+        width: 45%;
+    }
+}

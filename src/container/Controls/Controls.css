@@ -1,0 +1,39 @@
+.app-controls {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    width: auto;
+    max-width: 1200px;
+}
+
+.progress-bar {
+    width: 40vw;
+    gap: 20px;
+    padding: 0.5rem;
+}
+
+.progress-bar > input {
+    flex : 1;
+    cursor: pointer;
+}
+
+.control-buttons {
+    gap: 6rem;
+    padding-bottom: 0.5rem;
+    scale: 1.5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px) {
+    .control-buttons {
+        gap: 3.5rem;
+    }
+    
+    .app-controls {
+        width: 100%;
+    }
+
+    .progress-bar {
+        width: 90%;
+    }
+}

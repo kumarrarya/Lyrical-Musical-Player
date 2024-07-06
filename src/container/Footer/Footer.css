@@ -1,0 +1,5 @@
+.app-footer {
+    flex-direction: column;
+    color: #999;
+    padding-bottom: 1rem;
+}

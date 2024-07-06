@@ -1,0 +1,37 @@
+.library-song {
+    gap: 1rem;
+    padding: 1rem;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.library-song:hover {
+    background-color: rgb(209, 229, 254);
+    border-radius: 6px;
+}
+
+.library-song-info > h3 {
+    font-size: 1.25em;
+}
+
+.library-song-info > h4 {
+    font-size: 0.85rem;
+}
+
+.library-cover-img {
+    width: 35%;
+}
+
+.library-song-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.25rem;
+    color: rgb(88, 88, 88);
+}
+
+.selected {
+    background-color: rgb(249, 166, 249);
+    border-radius: 6px;
+}

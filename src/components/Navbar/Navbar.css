@@ -1,0 +1,33 @@
+.app-navbar {
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    padding: 2rem 8rem;
+}
+
+
+.button {
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: white;
+    background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .app-navbar {
+        padding: 2rem 4rem;
+    }
+
+    .button{
+        z-index: 10;
+    }
+}
