@@ -18,10 +18,20 @@
 }
 
 .control-buttons {
-    gap: 6rem;
+    position: relative;
+    width: 100%;
+    gap: 4rem;
     padding-bottom: 0.5rem;
     scale: 1.5;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.Repeat{
+    position: absolute;
+    left: 19%;
+    scale: 1.5;
 }
 
 @media screen and (max-width: 950px) {

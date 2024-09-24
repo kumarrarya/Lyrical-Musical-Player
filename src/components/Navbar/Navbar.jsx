@@ -92,7 +92,7 @@ const Navbar = ({
       <div >
           <input
             type="text"
-            className="searchBar"
+            className=" searchBar p-2 outline-none border border-solid rounded-lg border-black"
             placeholder="Search Artist Name"
             value={searchItem}
             onChange={(e)=> handleSearch(e.target.value)}
