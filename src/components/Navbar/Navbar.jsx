@@ -10,9 +10,10 @@ import './Navbar.css'
 const Navbar = ({
   libraryStatus,
   setLibraryStatus,
-  searchItem = "Search Artist Name",
+  searchItem = "Arijit Singh",
   setSearchItem,
   setSongs,
+  songs,
   setCurrentSong
 
 }) => {
@@ -36,12 +37,13 @@ const Navbar = ({
                 'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
             }
         };
-    let info={};
+    let info=songs;
     try {
       const response = await fetch(url, options);
       const result = await (response.json());
       info=result.data;
     } catch (error) {
+      info=songs;
       console.error(error);
     }
     let newSongList=[];
@@ -61,7 +63,6 @@ const Navbar = ({
           }
           if(key==="album"){
               for(let k in info[i][key]){
-                  // if(k==="id") obj.id=info[i][key][k];
                   if(k==="title") obj.name=info[i][key][k];
                   if(k==="cover_xl") obj.cover=info[i][key][k];
               }
@@ -69,6 +70,7 @@ const Navbar = ({
       }
       newSongList.push(obj);
     }
+    if(newSongList.length===0) newSongList=songs;
     setSongs(newSongList);
     setCurrentSong(newSongList[0]);
   }

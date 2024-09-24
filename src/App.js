@@ -15,7 +15,7 @@ function App() {
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[1]);
   const [isSongPlaying, setIsSongPlaying] = useState(false);
-  const [searchItem, setSearchItem] = useState("Arjit Singh");
+  const [searchItem, setSearchItem] = useState("");
 
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
@@ -47,7 +47,7 @@ function App() {
             setSearchItem={setSearchItem}
             setSongs={setSongs}
             setCurrentSong={setCurrentSong}
-
+            songs={songs}
             />
         <Player name={currentSong.name} artist={currentSong.artist} cover={currentSong.cover} id={currentSong.id} />
         <Controls 
