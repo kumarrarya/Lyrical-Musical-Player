@@ -6,6 +6,8 @@ import { Navbar } from './components';
 import data from './util';
 import './App.css';
 
+import useArtistSong from './hooks/useArtistSong';
+
 function App() {
   // Ref
   const audioRef = useRef(null);
@@ -13,6 +15,8 @@ function App() {
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[1]);
   const [isSongPlaying, setIsSongPlaying] = useState(false);
+  const [searchItem, setSearchItem] = useState("Arjit Singh");
+
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
@@ -24,38 +28,27 @@ function App() {
     const duration = e.target.duration;
     setSongInfo( {...songInfo, currentTime, duration});
   }
+  // const handleSearch = (searchItem){
+  //   setSearchItem(searchItem);
+  //   setTimeout(() => {
+      
+  //   }, 500);
+  //   const info=useArtistSong(searchItem);
 
-  // Auto-Skip 
-  // const onEndHandler = async () => {
-  //   let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-  //   let nextSongId;
-  //   setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-  //   nextSongId = songs[(currentIndex + 1) % songs.length].id;
-  //   // add active state
-  //   const newSongs = songs.map((state) => {
-  //     if(state.id === nextSongId){
-  //         return{
-  //             ...state,
-  //             active: true,
-  //         }
-  //     }
-  //     else{
-  //         return{
-  //             ...state,
-  //             active: false,
-  //         }
-  //     }
-  // })
-
-  // setSongs(newSongs);
-  // if(isSongPlaying) audioRef.current.play();
 
   // }
-
   return (
     <div className="app">
       <div className="wrapper flex">
-        <Navbar libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
+        <Navbar 
+            libraryStatus={libraryStatus} 
+            setLibraryStatus={setLibraryStatus} 
+            searchItem={searchItem} 
+            setSearchItem={setSearchItem}
+            setSongs={setSongs}
+            setCurrentSong={setCurrentSong}
+
+            />
         <Player name={currentSong.name} artist={currentSong.artist} cover={currentSong.cover} id={currentSong.id} />
         <Controls 
           audioRef={audioRef}
@@ -69,14 +62,14 @@ function App() {
           setSongInfo={setSongInfo}
           />
         <Footer />
-        <Library 
+         <Library 
           songs={songs}
           setSongs={setSongs}
           setCurrentSong={setCurrentSong}
           audioRef={audioRef}
           isSongPlaying={isSongPlaying}
           libraryStatus={libraryStatus}
-        />
+        /> 
       </div>
       <audio 
           onTimeUpdate={onTimeUpdateHandler}

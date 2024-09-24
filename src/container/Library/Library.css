@@ -18,6 +18,8 @@
 .library-header {
     width: 100%;
     padding-left: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .active-library {

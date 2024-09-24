@@ -2,18 +2,36 @@
     width: 100%;
     max-width: 1200px;
     justify-content: space-between;
-    padding: 2rem 8rem;
+    padding: 2rem;
 }
-
+.app-navbar-logo{
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bold;
+}
 
 .button {
     position: relative;
     padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+.searchBar{
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    outline: none;
     font-size: 1rem;
     background-color: white;
     border-radius: 6px;
     font-weight: bold;
-    transition: 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -22,12 +40,13 @@
     background-color: black;
 }
 
+
 @media screen and (max-width: 768px) {
     .app-navbar {
         padding: 2rem 4rem;
     }
-
     .button{
         z-index: 10;
     }
 }
+
